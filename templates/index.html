@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>    
+    <script src="{{url_for('static', filename='api.js')}}" type="text/javascript" defer></script>
+    <script src="{{url_for('static', filename='dom.js')}}" type="text/javascript" defer></script>
+    <script src="{{url_for('static', filename='datahandler.js')}}" type="text/javascript" defer></script>
+    <script src="{{url_for('static', filename='main.js')}}" type="text/javascript" defer></script>
+    <title>Star Wars Universe</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="/">Star Wars Universe</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/register">Registration</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>{{ message }}</a></li>
+        </ul>
+    </div>
+    </nav>
+    <div class='container'>
+        <h1>Star Wars universe planets</h1>
+        <button class="btn btn-primary" id="previous" type="button">Previous</button>
+        <button class="btn btn-primary" id="next" type="button">Next</button>
+        <table class="table table-bordered">
+            <thead class='planets-header'>
+                <tr>
+                    <th>Name</th>
+                    <th>Diameter</th>
+                    <th>Climate</th>
+                    <th>Terrain</th>
+                    <th>Surface Water Percentage</th>
+                    <th>Population</th>
+                    <th>Residents</th>
+                </tr>
+            </thead>
+            <tbody id="planets-body">
+            </tbody>
+        </table>
+        <div class="modal fade" id="starModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Residents of</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <thead class="residents-header">
+                            <tr>
+                                <th>Name</th>
+                                <th>Height</th>
+                                <th>Mass</th>
+                                <th>Hair color</th>
+                                <th>Skin color</th>
+                                <th>Eye color</th>
+                                <th>Birth year</th>
+                                <th>Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody id="residents-body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+      
+        </div>
+    </div>
+    
+</body>
+</html>
