@@ -4,7 +4,7 @@ app.APIHandler = {
 
   getApiData: function(apiUrl, callback){
     var request = new XMLHttpRequest();
-    request.open('GET', apiUrl.replace("http" , "https"), true);
+    request.open('GET', apiUrl, true);
 
     request.onload = function() {
       if (request.status >= 200 && request.status < 400) { // successful response
