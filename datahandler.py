@@ -8,7 +8,7 @@ def init_db_connection(connection_string=CONNECTION_STRING):
 
     try:
 
-        conn = psycopg2.connect
+        conn = psycopg2.connect(connection_string)
 
         conn.autocommit = True
 
